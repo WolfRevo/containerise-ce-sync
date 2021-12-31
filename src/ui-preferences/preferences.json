@@ -13,9 +13,9 @@
   },
   { 
     "type": "string",
-    "name": "openInCurrentContainer",
-    "label": "Open in current container",
-    "description": "A list of domains separated by a pipe (|) which will *always* open in the current container that opened them",
+    "name": "openNavigationMatchInCurrentContainer",
+    "label": "Navigation targets matching this regex open in existing container",
+    "description": "Regular expression. If this matches a navigation target and the current tab already has a container, open target in same container.",
     "defaultValue": ""
   },
   {

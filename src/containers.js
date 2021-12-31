@@ -68,19 +68,6 @@ async function handle(url, tabId) {
     delete creatingTabs[tabId];
   }
   let preferences = await PreferenceStorage.getAll(true);
-  let OPEN_IN_CURRENT_CONTAINER_RAW = preferences.openInCurrentContainer;
-  //console.debug('Raw configuration variable --> ', OPEN_IN_CURRENT_CONTAINER_RAW);
-  if (typeof OPEN_IN_CURRENT_CONTAINER_RAW !== 'undefined') {
-    const OPEN_IN_CURRENT_CONTAINER = '(' + preferences.openInCurrentContainer.replace(/ /g, '') + ')/';
-    //console.debug('Formatted configuration variable --> ', OPEN_IN_CURRENT_CONTAINER);
-    if (OPEN_IN_CURRENT_CONTAINER !== '') {
-      let OPEN_IN_CURRENT_CONTAINER_REGEX = new RegExp(OPEN_IN_CURRENT_CONTAINER);
-      if (OPEN_IN_CURRENT_CONTAINER_REGEX.test(url)) {
-        //console.debug('URL was left in current container due to Regex--> ', url);
-        return;
-      }
-    }
-  }
   let [hostMap, identities, currentTab] = await Promise.all([
     Storage.get(url, preferences.matchDomainOnly),
     ContextualIdentity.getAll(),
@@ -89,6 +76,19 @@ async function handle(url, tabId) {
 
   if (currentTab.incognito || !hostMap) {
     return {};
+  }
+
+  const openNavigationMatchInCurrentContainerRaw = preferences.openNavigationMatchInCurrentContainer;
+//  console.debug('Raw configuration variable: ' + openNavigationMatchInCurrentContainerRaw);
+  if (typeof openNavigationMatchInCurrentContainerRaw !== 'undefined' && openNavigationMatchInCurrentContainerRaw !== '') {
+    const openNavigationMatchInCurrentContainer = '(' + openNavigationMatchInCurrentContainerRaw + ')';
+//    console.debug(`openNavigationMatchInCurrentContainer: ${openNavigationMatchInCurrentContainer}`);
+    let re = new RegExp(openNavigationMatchInCurrentContainer);
+//    console.debug(`currentTab.cookieStoreId =${currentTab.cookieStoreId}`);
+    if (currentTab.cookieStoreId !== 'firefox-default' && re.test(url)) {
+      console.debug(`Regex "${openNavigationMatchInCurrentContainer}" matched. Opening URL ${url} in current container`);
+      return {};
+    }
   }
 
   const hostIdentity = identities.find((identity) => identity.cookieStoreId === hostMap.cookieStoreId);
