@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Containerise CE",
-  "version": "3.9.1.1",
+  "version": "3.9.1.2",
   "description": "Firefox extension to automatically open websites in a container (Community Edition)",
   "icons": {
     "48": "icons/icon.png",
@@ -27,7 +27,6 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "containerise@nan.sh",
       "strict_min_version": "57.0"
     }
   },

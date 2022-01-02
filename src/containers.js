@@ -91,6 +91,21 @@ async function handle(url, tabId) {
     }
   }
 
+  const matchForStickyContainersRaw = preferences.matchForStickyContainers;
+  if (typeof matchForStickyContainersRaw !== 'undefined' && matchForStickyContainersRaw !== '') {
+    let re = new RegExp(`(${matchForStickyContainersRaw})`);
+//    let identity = browser.contextualIdentities.get(currentTab.cookieStoreId);
+
+    const identity = identities.find((identity) => identity.cookieStoreId === currentTab.cookieStoreId);
+
+    if (identity && re.test(identity.name)) {
+      console.debug(`Regex "${matchForStickyContainersRaw}" matched with current container \`${identity.name}\`. Opening URL \`${url}\` in current container`);
+      return {};
+    } else {
+      console.debug(`Regex "${matchForStickyContainersRaw}" did not match with current container \`${identity.name}\`. Not opening URL \`${url}\` in current container`);
+    }
+  }
+
   const hostIdentity = identities.find((identity) => identity.cookieStoreId === hostMap.cookieStoreId);
   let targetCookieStoreId;
 

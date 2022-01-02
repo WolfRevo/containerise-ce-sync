@@ -11,11 +11,18 @@
     "label": "Keep old tabs",
     "description": "After a contained tab has been created, the old won't be closed"
   },
-  { 
+  {
     "type": "string",
     "name": "openNavigationMatchInCurrentContainer",
-    "label": "Navigation targets matching this regex open in existing container",
-    "description": "Regular expression. If this matches a navigation target and the current tab already has a container, open target in same container.",
+    "label": "\"Sticky\" Navigation Targets Regex",
+    "description": "Navigation targets matching this regular expression open in existing container",
+    "defaultValue": ""
+  },
+  {
+    "type": "string",
+    "name": "matchForStickyContainers",
+    "label": "\"Sticky\" Containers Regex",
+    "description": "Navigations in containers matching this regular expression always open in same container",
     "defaultValue": ""
   },
   {
