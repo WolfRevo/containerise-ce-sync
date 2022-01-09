@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.9.0.1 (CE)] - 8 Jan 2022
+This is the first "Community Edition" release
+### Added
+- "Sticky" when navigation target matches regex in extension settings
+- "Sticky" when current-container matches regex in extension settings
+
 ## [3.9.0] - 10 Feb 2021
 ### Added
 - Remove temporary tabs if keepOldTabs is true. Fixes #93
