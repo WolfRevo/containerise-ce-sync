@@ -43,5 +43,11 @@
   },
   "dependencies": {
     "punycode": "^2.1.1"
+  },
+  "webExt": {
+    "sourceDir": "build",
+    "sign": {
+      "id": "{59b0b4d3-57a8-4798-b9f1-af39aeac882a}"
+    }
   }
 }
