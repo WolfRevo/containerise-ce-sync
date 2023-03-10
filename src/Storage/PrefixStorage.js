@@ -4,7 +4,7 @@ export default class PrefixStorage {
     this.PREFIX = '';
     // The key to use to get the name of the object when calling set()
     this.SET_KEY = 'key';
-    this.storage = browser.storage.local;
+    this.storage = browser.storage.sync;
     this.listeners = new Map();
   }
 

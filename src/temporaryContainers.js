@@ -91,7 +91,7 @@ export function cleanUpTemporaryContainers() {
       }).catch(console.error));
     }
     return Promise.all(promises).then(() => {
-      browser.storage.local.get().then(console.debug);
+      browser.storage.sync.get().then(console.debug);
     });
   });
 }

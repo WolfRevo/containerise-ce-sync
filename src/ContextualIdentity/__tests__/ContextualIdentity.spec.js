@@ -36,7 +36,7 @@ describe('ContextualIdentities', () => {
         },
       },
       storage: {
-        local: {},
+        sync: {},
       },
     };
 

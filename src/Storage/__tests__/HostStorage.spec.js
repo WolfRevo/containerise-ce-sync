@@ -5,7 +5,7 @@ describe('HostStorage', () => {
   beforeEach(() => {
     global.browser = {
       storage: {
-        local: {
+        sync: {
 
           get: jest.fn(() => new Promise((resolve) =>
             resolve({
