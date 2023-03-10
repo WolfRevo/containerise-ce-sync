@@ -1,3 +1,5 @@
+# Private fork to enable FF sync on the latest release from nwg. Use on your own Risk!
+
 # <img src="https://raw.githubusercontent.com/kintesh/containerise/master/static/icons/icon.png" alt="Drawing" width="42" align="top"/> containerise [![Build Status](https://travis-ci.org/kintesh/containerise.svg?branch=master)](https://travis-ci.org/kintesh/containerise)
 
 Firefox extension to automatically open websites in a container
@@ -8,7 +10,7 @@ Firefox extension to automatically open websites in a container
 
 
 # Installation
-Install the latest release for Firefox from [AMO](https://addons.mozilla.org/en-US/firefox/addon/containerise/)
+Install the latest release directly from releases here.
 
 
 
