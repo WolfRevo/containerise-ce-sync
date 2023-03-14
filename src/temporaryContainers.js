@@ -90,8 +90,15 @@ export function cleanUpTemporaryContainers() {
         console.warn('Removed leftover preferences');
       }).catch(console.error));
     }
-    return Promise.all(promises).then(() => {
-      browser.storage.sync.get().then(console.debug);
-    });
+    PreferenceStorage.get('LocalOrSync').then(({value}) => {
+      if (value === true) {
+        browser.storage.sync.get().then(console.debug);
+      }
+      else {
+        browser.storage.local.get().then(console.debug);
+      }
+    }).catch(() => {
+      browser.storage.local.get().then(console.debug);
+    });        
   });
 }

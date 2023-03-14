@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.9.2.0 (CES)] - 8 Jan 2022
+This is the first "Community Edition Sync" release
+### Added
+- Option to enable Firefox Sync while maintaining the option to stay local
+- took over PR make matching regex case insensitive by default #180 from kintesh / containerise made by raghur
+
 ## [3.9.0.1 (CE)] - 8 Jan 2022
 This is the first "Community Edition" release
 ### Added
