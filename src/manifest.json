@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Containerise CE sync",
-  "version": "3.9.1.1",
+  "version": "3.9.2.0",
   "description": "Firefox extension to automatically open websites in a container (Community Edition with Firefox Sync)",
   "icons": {
     "48": "icons/icon.png",
@@ -18,7 +18,7 @@
   ],
   "browser_action": {
     "browser_style": true,
-    "default_title": "Containerise CE",
+    "default_title": "Containerise CE sync",
     "default_popup": "ui/index.html",
     "default_icon": "icons/icon.png"
   },

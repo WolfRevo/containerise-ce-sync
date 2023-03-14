@@ -5,6 +5,51 @@ describe('HostStorage', () => {
   beforeEach(() => {
     global.browser = {
       storage: {
+        local: {
+
+          get: jest.fn(() => new Promise((resolve) =>
+            resolve({
+              'map=example.com': {
+                host: 'example.com',
+                container: 'example',
+                enabled: true,
+              },
+              'map=kinte.sh/*': {
+                host: 'kinte.sh/*',
+                container: 'personal',
+                enabled: true,
+              },
+              'map=*.example.com': {
+                host: '*.example.com',
+                container: 'example',
+                enabled: true,
+              },
+              'map=*.kinte.sh/*': {
+                host: '*.kinte.sh/*',
+                container: 'personal',
+                enabled: true,
+              },
+              'map=test.example.com/here': {
+                host: 'test.example.com/here',
+                container: 'example',
+                enabled: true,
+              },
+              'map=test.kinte.sh/here': {
+                host: 'test.kinte.sh/here',
+                container: 'personal',
+                enabled: true,
+              },
+            }),
+          )),
+
+          set: jest.fn((keys) => new Promise((resolve) => resolve(keys))),
+
+          remove: jest.fn((key) => new Promise((resolve) => resolve({key}))),
+
+          clear: jest.fn(() => new Promise((resolve) => resolve())),
+
+        },
+        
         sync: {
 
           get: jest.fn(() => new Promise((resolve) =>

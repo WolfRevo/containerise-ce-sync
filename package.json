@@ -1,7 +1,7 @@
 {
-  "name": "containerise",
-  "version": "3.9.1.1",
-  "description": "Firefox extension to automatically open websites in a container",
+  "name": "containerise CE sync",
+  "version": "3.9.2.0",
+  "description": "Firefox extension to automatically open websites in a container (Community Edition with Firefox Sync)",
   "main": "index.js",
   "repository": "https://wolfrevo@github.com/wolfrevo/containerise-ce-sync.git",
   "author": "WolfRevo <i.am@Wolf.Revo>",
@@ -31,6 +31,7 @@
     "markdown-it-table-of-contents": "^0.4.4",
     "markdown-it-vanilla-loader": "^1.0.10",
     "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.14.1",
     "raw-loader": "^3.1.0",
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.0",
@@ -41,9 +42,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "node-sass": "^4.12.0",
-    "punycode": "^2.1.1",
-    "sass": "^1.58.3"
+    "punycode": "^2.1.1"
   },
   "webExt": {
     "sourceDir": "build"
