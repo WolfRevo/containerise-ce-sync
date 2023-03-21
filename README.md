@@ -1,4 +1,6 @@
-# Private fork to enable FF sync on the latest release from nwg. Use on your own Risk! https://addons.mozilla.org/de/firefox/addon/containerise-ce-sync/
+# Private fork to enable FF sync on the latest release from nwg. Use on your own Risk!
+
+# https://addons.mozilla.org/de/firefox/addon/containerise-ce-sync/
 
 # Transistion from nwg/containerise-ce
 
