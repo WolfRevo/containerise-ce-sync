@@ -1,7 +1,5 @@
 # Private fork to enable FF sync on the latest release from nwg. Use on your own Risk!
 
-# https://addons.mozilla.org/de/firefox/addon/containerise-ce-sync/
-
 # Transistion from nwg/containerise-ce
 
 Please do a manual transition, means: export your rules you created in nwg/containerise-ce (using copy&paste) and import it to this addon as they don't know each others store (by intention).
