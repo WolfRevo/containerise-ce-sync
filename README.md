@@ -20,7 +20,7 @@ Firefox extension to automatically open websites in a container
 
 
 # Installation
-Install the latest release directly from releases here.
+Install the latest release for Firefox from [AMO](https://addons.mozilla.org/de/firefox/addon/containerise-ce-sync/)
 
 
 
